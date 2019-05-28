@@ -15,7 +15,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-       $result = Project::all();
+       $result = Project::paginate(2);
        return $result;
 
     }
