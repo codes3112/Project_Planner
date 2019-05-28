@@ -3,9 +3,10 @@ import { BrowserRouter as Router, NavLink, Route, Switch} from "react-router-dom
 import Home from "./Home";
 import About from "./About";
 import ProjectIndex from './project/ProjectIndex';
+
 const Navbar = () => {
     return (
-        <Router>
+        
             <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 < NavLink to="/" className="navbar-brand" >My_Project_Planner</NavLink>
@@ -35,12 +36,12 @@ const Navbar = () => {
                    <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/about" component={About} /> 
-                        <Route exact path="/project" component={ProjectIndex} />
-                    </Switch>          
+                        <Route exact path="/project" component={ProjectIndex} />                  
+                   </Switch>          
 
                         
             </div>   
-        </Router>
+  
         
 
 

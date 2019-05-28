@@ -17,7 +17,7 @@ export class EditProject extends Component {
     }
     componentDidMount() {
         
-        axios.get('http://localhost:8000/project/edit/'+this.props.match.params.id)
+        axios.get('http://localhost:8000/api/project/edit/'+this.props.match.params.id)
         .then(response=>{
             this.setState({
                 project_name:response.data.name,
@@ -38,7 +38,7 @@ export class EditProject extends Component {
             project_status:this.state.project_status
         }
         console.log(project);
-        axios.put('http://localhost:8000/project/update/'+this.props.match.params.id, project)
+        axios.put('http://localhost:8000/api/project/update/'+this.props.match.params.id, project)
             .then(res => console.log(res.data));
 
         this.setState({

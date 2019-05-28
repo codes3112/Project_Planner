@@ -28,7 +28,7 @@ export default class AddProject extends Component {
             project_status:this.state.project_status
         }
         console.log(project);
-        axios.post('http://localhost:8000/project/store', project)
+        axios.post('http://localhost:8000/api/project/store', project)
             .then(res => console.log(res.data));
 
         this.setState({

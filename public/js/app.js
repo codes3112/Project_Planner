@@ -66019,7 +66019,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Navbar = function Navbar() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: "navbar navbar-expand-lg navbar-dark bg-dark"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     to: "/",
@@ -66076,7 +66076,7 @@ var Navbar = function Navbar() {
     exact: true,
     path: "/project",
     component: _project_ProjectIndex__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }))));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
@@ -66156,7 +66156,7 @@ function (_Component) {
         project_status: this.state.project_status
       };
       console.log(project);
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8000/project/store', project).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8000/api/project/store', project).then(function (res) {
         return console.log(res.data);
       });
       this.setState({
@@ -66282,7 +66282,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/project/edit/' + this.props.match.params.id).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/api/project/edit/' + this.props.match.params.id).then(function (response) {
         _this2.setState({
           project_name: response.data.name,
           project_body: response.data.body
@@ -66304,7 +66304,7 @@ function (_Component) {
         project_status: this.state.project_status
       };
       console.log(project);
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put('http://localhost:8000/project/update/' + this.props.match.params.id, project).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put('http://localhost:8000/api/project/update/' + this.props.match.params.id, project).then(function (res) {
         return console.log(res.data);
       });
       this.setState({
@@ -66433,7 +66433,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/project').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/api/project').then(function (response) {
         _this2.setState({
           projects: response.data.data,
           itemsCountPerPage: response.data.per_age,
@@ -66450,7 +66450,7 @@ function (_Component) {
       console.log("active page is ".concat(pageNumber)); //this.setState({activePage: pageNumber});
       //"http://localhost:8000/project?page=1"
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/project?page=' + pageNumber).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/api/project?page=' + pageNumber).then(function (response) {
         _this3.setState({
           projects: response.data.data,
           itemsCountPerPage: response.data.per_age,
@@ -66464,7 +66464,7 @@ function (_Component) {
     value: function onDelete(project_id) {
       var _this4 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]('http://localhost:8000/project/delete/' + project_id).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]('http://localhost:8000/api/project/delete/' + project_id).then(function (response) {
         var projects = _this4.state.projects;
 
         for (var i = 0; i < projects.length; i++) {

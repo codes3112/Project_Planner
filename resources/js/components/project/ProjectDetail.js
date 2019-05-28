@@ -18,7 +18,7 @@ export class ProjectDetail extends Component {
     }
     
     componentDidMount() {
-        axios.get('http://localhost:8000/project')
+        axios.get('http://localhost:8000/api/project')
         .then(response=>{
             this.setState({
                 projects:response.data.data,
@@ -33,7 +33,7 @@ export class ProjectDetail extends Component {
         console.log(`active page is ${pageNumber}`);
         //this.setState({activePage: pageNumber});
         //"http://localhost:8000/project?page=1"
-        axios.get('http://localhost:8000/project?page='+pageNumber)
+        axios.get('http://localhost:8000/api/project?page='+pageNumber)
         .then(response=>{
             this.setState({
                 projects:response.data.data,
@@ -45,7 +45,7 @@ export class ProjectDetail extends Component {
       }
 
     onDelete(project_id){
-        axios.delete('http://localhost:8000/project/delete/'+project_id)
+        axios.delete('http://localhost:8000/api/project/delete/'+project_id)
             .then(response=>{
                 var projects = this.state.projects;
                 for(var i=0; i<projects.length; i++){

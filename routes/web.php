@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('project','Api\ProjectController@index');
-Route::post('project/store','Api\ProjectController@store');
-Route::delete('project/delete/{id}','Api\ProjectController@destroy');
-Route::get('project/edit/{id}','Api\ProjectController@edit');
-Route::put('project/update/{id}','Api\ProjectController@update');
+//adding api server-side routing //divert all to welcome view
+
+Route::get('/{path}', function(){
+    return view('welcome');
+})->where('path','.*');
+
