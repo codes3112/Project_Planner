@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, NavLink, Route , Switch} from "react-router-dom";
 import ProjectDetail from './ProjectDetail'
 import AddProject from './AddProject'
+import EditProject from './EditProject'
 
 
 
@@ -18,6 +19,7 @@ class ProjectIndex extends Component {
                     <Switch>
                         <Route exact path='/project' component={ProjectDetail} />
                         <Route path='/project/add' component={AddProject} />
+                        <Route path='/project/edit/:id' component={EditProject} />
                     </Switch>        
                     </div>
                 </Router>

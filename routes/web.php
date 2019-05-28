@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('project','Api\ProjectController@index');
 Route::post('project/store','Api\ProjectController@store');
+Route::delete('project/delete/{id}','Api\ProjectController@destroy');
+Route::get('project/edit/{id}','Api\ProjectController@edit');
+Route::put('project/update/{id}','Api\ProjectController@update');

@@ -64,7 +64,8 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::find($id);
+        return $project;
     }
 
     /**
@@ -76,7 +77,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = Project::find($id);
+        $project-> name = $request->project_name;
+        $project-> body = $request->project_body;
+        $project-> active = $request->project_status;
+        $project-> save();
+
     }
 
     /**
@@ -87,6 +93,7 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project::find($id);
+        $project->delete();
     }
 }
