@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Pagination from "react-js-pagination";
+import SuccessAlert from '../SuccessAlert';
+import ErrorAlert from '../ErrorAlert';
 
 export class ProjectDetail extends Component {
     constructor(){
@@ -11,7 +13,8 @@ export class ProjectDetail extends Component {
             activePage : 1,
             itemsCountPerPage : 1,
             totalItemsCount : 1,
-            pageRangeDisplayed:3
+            alert_message:""
+        
         }
         this.handlePageChange=this.handlePageChange.bind(this);
 
@@ -54,13 +57,21 @@ export class ProjectDetail extends Component {
                         this.setState({projects});
                     }
                 }
+                this.setState({alert_message:"success"})
+            }).catch(error=>{
+                    this.setState({alert_message:"error"})
             })
+            
     }
     
     render() {
         
         return (
             <div className="container">
+            <hr/>
+            {this.state.alert_message == "success" ? <SuccessAlert message={"Project deleted Successfully !!"}/>:null}
+            {this.state.alert_message == "error" ? <ErrorAlert/>:null}
+
                <table className="table">
                 <thead>
                     <tr>

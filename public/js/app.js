@@ -60908,7 +60908,7 @@ Object.defineProperty(exports,"__esModule",{value:!0});var _createClass=function
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65883,6 +65883,55 @@ function About() {
 
 /***/ }),
 
+/***/ "./resources/js/components/Error404.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Error404.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Error404; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+function Error404() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "alert alert-danger",
+    role: "alert"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " 404 Page Not Found"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/",
+    className: "alert-link"
+  }, " Back to Home"));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/ErrorAlert.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/ErrorAlert.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ErrorAlert; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ErrorAlert() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "alert alert-danger",
+    role: "alert"
+  }, "Oops !! Some Error occured...");
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/Footer.js":
 /*!*******************************************!*\
   !*** ./resources/js/components/Footer.js ***!
@@ -66012,6 +66061,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.js");
 /* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About */ "./resources/js/components/About.js");
 /* harmony import */ var _project_ProjectIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./project/ProjectIndex */ "./resources/js/components/project/ProjectIndex.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Error404 */ "./resources/js/components/Error404.js");
+
 
 
 
@@ -66076,10 +66127,81 @@ var Navbar = function Navbar() {
     exact: true,
     path: "/project",
     component: _project_ProjectIndex__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/project/add",
+    component: _project_ProjectIndex__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/project/edit/:id",
+    component: _project_ProjectIndex__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/",
+    component: _Error404__WEBPACK_IMPORTED_MODULE_5__["default"]
   })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
+
+/***/ }),
+
+/***/ "./resources/js/components/SuccessAlert.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/SuccessAlert.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SuccessAlert; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SuccessAlert =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(SuccessAlert, _Component);
+
+  function SuccessAlert(props) {
+    _classCallCheck(this, SuccessAlert);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SuccessAlert).call(this, props));
+  }
+
+  _createClass(SuccessAlert, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-success",
+        role: "alert"
+      }, this.props.message);
+    }
+  }]);
+
+  return SuccessAlert;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
 
 /***/ }),
 
@@ -66097,6 +66219,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _SuccessAlert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../SuccessAlert */ "./resources/js/components/SuccessAlert.js");
+/* harmony import */ var _ErrorAlert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ErrorAlert */ "./resources/js/components/ErrorAlert.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -66120,6 +66244,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var AddProject =
 /*#__PURE__*/
 function (_Component) {
@@ -66136,7 +66262,8 @@ function (_Component) {
     _this.state = {
       project_name: "",
       project_body: "",
-      project_status: "1"
+      project_status: "1",
+      alert_message: ""
     };
     return _this;
   }
@@ -66149,6 +66276,8 @@ function (_Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
       var project = {
         project_name: this.state.project_name,
@@ -66157,7 +66286,13 @@ function (_Component) {
       };
       console.log(project);
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8000/api/project/store', project).then(function (res) {
-        return console.log(res.data);
+        _this2.setState({
+          alert_message: "success"
+        });
+      })["catch"](function (error) {
+        _this2.setState({
+          alert_message: "error"
+        });
       });
       this.setState({
         project_name: "",
@@ -66170,7 +66305,9 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.state.alert_message == "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        message: "Project added Successfully !!"
+      }) : null, this.state.alert_message == "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_3__["default"], null) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
@@ -66183,7 +66320,8 @@ function (_Component) {
         id: "project_name",
         placeholder: "Enter Project Title",
         onChange: this.handleChange.bind(this),
-        value: this.state.project_name
+        value: this.state.project_name,
+        required: true
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "project_body",
         className: "badge badge-secondary"
@@ -66193,7 +66331,8 @@ function (_Component) {
         id: "project_body",
         placeholder: "Enter Project Details",
         onChange: this.handleChange.bind(this),
-        value: this.state.project_body
+        value: this.state.project_body,
+        required: true
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "project_status",
         className: "badge badge-secondary",
@@ -66234,6 +66373,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _SuccessAlert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../SuccessAlert */ "./resources/js/components/SuccessAlert.js");
+/* harmony import */ var _ErrorAlert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ErrorAlert */ "./resources/js/components/ErrorAlert.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -66256,6 +66397,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var EditProject =
 /*#__PURE__*/
 function (_Component) {
@@ -66272,7 +66415,8 @@ function (_Component) {
     _this.state = {
       project_name: "",
       project_body: "",
-      project_status: "1"
+      project_status: "1",
+      alert_message: ""
     };
     return _this;
   }
@@ -66297,6 +66441,8 @@ function (_Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var project = {
         project_name: this.state.project_name,
@@ -66305,7 +66451,13 @@ function (_Component) {
       };
       console.log(project);
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.put('http://localhost:8000/api/project/update/' + this.props.match.params.id, project).then(function (res) {
-        return console.log(res.data);
+        _this3.setState({
+          alert_message: "success"
+        });
+      })["catch"](function (error) {
+        _this3.setState({
+          alert_message: "error"
+        });
       });
       this.setState({
         project_name: "",
@@ -66318,7 +66470,9 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.state.alert_message == "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        message: "Project updated Successfully !!"
+      }) : null, this.state.alert_message == "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_3__["default"], null) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
@@ -66384,6 +66538,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_js_pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-js-pagination */ "./node_modules/react-js-pagination/dist/Pagination.js");
 /* harmony import */ var react_js_pagination__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_js_pagination__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _SuccessAlert__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../SuccessAlert */ "./resources/js/components/SuccessAlert.js");
+/* harmony import */ var _ErrorAlert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ErrorAlert */ "./resources/js/components/ErrorAlert.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66406,6 +66562,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var ProjectDetail =
 /*#__PURE__*/
 function (_Component) {
@@ -66422,7 +66580,7 @@ function (_Component) {
       activePage: 1,
       itemsCountPerPage: 1,
       totalItemsCount: 1,
-      pageRangeDisplayed: 3
+      alert_message: ""
     };
     _this.handlePageChange = _this.handlePageChange.bind(_assertThisInitialized(_this));
     return _this;
@@ -66476,6 +66634,14 @@ function (_Component) {
             });
           }
         }
+
+        _this4.setState({
+          alert_message: "success"
+        });
+      })["catch"](function (error) {
+        _this4.setState({
+          alert_message: "error"
+        });
       });
     }
   }, {
@@ -66485,7 +66651,9 @@ function (_Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.state.alert_message == "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        message: "Project deleted Successfully !!"
+      }) : null, this.state.alert_message == "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "table"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         scope: "col"

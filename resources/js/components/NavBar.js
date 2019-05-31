@@ -3,7 +3,7 @@ import { BrowserRouter as Router, NavLink, Route, Switch} from "react-router-dom
 import Home from "./Home";
 import About from "./About";
 import ProjectIndex from './project/ProjectIndex';
-
+import Error404 from './Error404';
 const Navbar = () => {
     return (
         
@@ -36,8 +36,11 @@ const Navbar = () => {
                    <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/about" component={About} /> 
-                        <Route exact path="/project" component={ProjectIndex} />                  
-                   </Switch>          
+                        <Route exact path="/project" component={ProjectIndex} />                        
+                        <Route exact path='/project/add' component={ProjectIndex} />
+                        <Route exact path='/project/edit/:id' component={ProjectIndex} />
+                        <Route path='/' component={Error404} />
+                    </Switch>          
 
                         
             </div>   

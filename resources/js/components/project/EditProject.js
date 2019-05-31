@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import SuccessAlert from '../SuccessAlert';
+import ErrorAlert from '../ErrorAlert';
 
 export class EditProject extends Component {
     constructor(props) {
@@ -10,7 +12,8 @@ export class EditProject extends Component {
         this.state = {
             project_name: "",
             project_body: "",
-            project_status:"1"
+            project_status:"1",
+            alert_message:""
             
         }
 
@@ -39,7 +42,11 @@ export class EditProject extends Component {
         }
         console.log(project);
         axios.put('http://localhost:8000/api/project/update/'+this.props.match.params.id, project)
-            .then(res => console.log(res.data));
+            .then(res => {
+                this.setState({alert_message:"success"})
+            }).catch(error=>{
+                this.setState({alert_message:"error"})            
+            });
 
         this.setState({
             project_name: "",
@@ -54,6 +61,10 @@ export class EditProject extends Component {
 
         return (
             <div className="container">
+            <hr/>
+            {this.state.alert_message == "success" ? <SuccessAlert message={"Project updated Successfully !!"}/>:null}
+            {this.state.alert_message == "error" ? <ErrorAlert/>:null}
+
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="project_name" className="badge badge-secondary">Project Name</label>

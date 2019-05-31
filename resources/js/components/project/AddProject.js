@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SuccessAlert from '../SuccessAlert';
+import ErrorAlert from '../ErrorAlert';
 
 export default class AddProject extends Component {
     constructor() {
@@ -10,7 +12,8 @@ export default class AddProject extends Component {
         this.state = {
             project_name: "",
             project_body: "",
-            project_status:"1"
+            project_status:"1",
+            alert_message:""
             
         }
 
@@ -29,7 +32,12 @@ export default class AddProject extends Component {
         }
         console.log(project);
         axios.post('http://localhost:8000/api/project/store', project)
-            .then(res => console.log(res.data));
+            .then(res => {
+                
+                this.setState({alert_message:"success"})
+            }).catch(error=>{
+                this.setState({alert_message:"error"})            
+            });
 
         this.setState({
             project_name: "",
@@ -44,6 +52,10 @@ export default class AddProject extends Component {
 
         return (
             <div className="container">
+            <hr/>
+            {this.state.alert_message == "success" ? <SuccessAlert message={"Project added Successfully !!"}/>:null}
+            {this.state.alert_message == "error" ? <ErrorAlert/>:null}
+
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="project_name" className="badge badge-secondary">Project Name</label>
@@ -54,6 +66,7 @@ export default class AddProject extends Component {
                             placeholder="Enter Project Title"
                             onChange={this.handleChange.bind(this)}
                             value={this.state.project_name}
+                            required
                         />
                         <label htmlFor="project_body" className="badge badge-secondary">Project Details</label>
                         <textarea
@@ -62,6 +75,7 @@ export default class AddProject extends Component {
                             placeholder="Enter Project Details"
                             onChange={this.handleChange.bind(this)}
                             value={this.state.project_body}
+                            required
                         />
                          <label htmlFor="project_status" className="badge badge-secondary" value={this.state.value} onChange={this.handleChange.bind(this)}>Project Status</label>
                             <select className="form-control" id="project_status">
