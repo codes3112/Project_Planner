@@ -58,7 +58,7 @@ export default class AddProject extends Component {
 
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="project_name" className="badge badge-secondary">Project Name</label>
+                        <label htmlFor="project_name" className="badge badge-secondary" style={inLine}>Project Name</label>
                         <input
                             type="text"
                             className="form-control"
@@ -67,8 +67,9 @@ export default class AddProject extends Component {
                             onChange={this.handleChange.bind(this)}
                             value={this.state.project_name}
                             required
-                        />
-                        <label htmlFor="project_body" className="badge badge-secondary">Project Details</label>
+                        /><br></br>
+                        
+                        <label htmlFor="project_body" className="badge badge-secondary" style={inLine}>Project Details</label>
                         <textarea
                             className="form-control" rows="4"
                             id="project_body"
@@ -76,8 +77,8 @@ export default class AddProject extends Component {
                             onChange={this.handleChange.bind(this)}
                             value={this.state.project_body}
                             required
-                        />
-                         <label htmlFor="project_status" className="badge badge-secondary" value={this.state.value} onChange={this.handleChange.bind(this)}>Project Status</label>
+                        /><br></br>
+                         <label htmlFor="project_status" className="badge badge-secondary" style={inLine} value={this.state.value} onChange={this.handleChange.bind(this)}>Project Status</label>
                             <select className="form-control" id="project_status">
                             <option defaultValue="1">Active</option>
                             <option value="0">InActive</option>
@@ -92,4 +93,8 @@ export default class AddProject extends Component {
             </div>
         )
     }
+}
+
+var inLine ={
+    fontSize:'1rem'
 }

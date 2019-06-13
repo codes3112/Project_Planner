@@ -23,3 +23,8 @@ Route::delete('project/delete/{id}','Api\ProjectController@destroy');
 Route::get('project/edit/{id}','Api\ProjectController@edit');
 Route::put('project/update/{id}','Api\ProjectController@update');
 
+Route::post('register','UserController@register');
+Route::post('login','UserController@login');
+Route::get('profile','UserController@getAuthenticatedUser');
+
+
